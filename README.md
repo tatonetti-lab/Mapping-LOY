@@ -6,8 +6,6 @@ This repository contains scripts and tools to quantify and analyze Loss of Y (LO
 
 ## Table of Contents
 - [Overview](#overview)  
-- [Repository Structure](#repository-structure)  
-- [Installation](#installation)  
 - [Scripts](#scripts)  
 - [Usage](#usage)  
 - [Data](#data)  
@@ -28,10 +26,10 @@ Loss of Y (LOY) is a common somatic chromosomal aberration with implications in 
 
 ## Scripts
 
-### `extract_Y_positions.sh`
+### `ExtractYpositions.sh`
 Extracts all reads mapped to chromosome Y from a directory of BAM files and records their positions.
 
 **Usage:**
 ```bash
-bash scripts/extract_Y_positions.sh /path/to/bam/directory /path/to/output/file.txt
+bash ExtractYpositions.sh /path/to/bam/directory /path/to/output/file.txt
 
