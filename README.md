@@ -32,4 +32,17 @@ Extracts all reads mapped to chromosome Y from a directory of BAM files and reco
 **Usage:**
 ```bash
 bash ExtractYpositions.sh /path/to/bam/directory /path/to/output/file.txt
+```
+## Data
+
+This repository contains data files required for the LOY mapping pipeline.
+
+### Required files
+
+- **`gene_chrY_positions.txt`** – Contains the start and end positions of genes on chromosome Y. 
+- **BAM files** – High-coverage WGS/WES BAM files.  
+- **RNA-seq counts** – Processed RNA-seq count files for integration with LOY analyses.
+
+> Full CCLE or other controlled-access datasets are not included due to data usage restrictions.
+
 
