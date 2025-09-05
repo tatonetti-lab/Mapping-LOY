@@ -33,6 +33,25 @@ Extracts all reads mapped to chromosome Y from a directory of BAM files and reco
 ```bash
 bash ExtractYpositions.sh /path/to/bam/directory /path/to/output/file.txt
 ```
+### `AnalyzeYPositions.R`
+Analyzes chromosome Y read positions to identify sparse regions and low-density genes.  
+Generates histograms, cumulative distributions, and visualizations of read density.  
+
+**Dependencies:**  
+- R packages: `dplyr`, `tidyr`, `ggplot2`
+
+**Key outputs:**
+- `ChromosomeDensityHist.png` – Histogram of read density across chromosome Y  
+- `low_density_2000genes.txt` – Genes overlapping low-density regions (below threshold)  
+- `ChromosomeCDF.png` – Cumulative distribution function of read densities  
+- `orderedSamples.txt` – Sample IDs ordered by number of sparse regions  
+- `ChromosomePosition.png` – Scatter plot of reads per sample, ordered by sparsity  
+- `ChromosomeBinSummary.png` – Distribution of reads across chromosome Y bins  
+
+**Usage:**
+```bash
+Rscript AnalyzeYPositions.R
+```
 ## Data
 
 This repository contains data files required for the LOY mapping pipeline.
