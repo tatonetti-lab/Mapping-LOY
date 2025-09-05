@@ -87,6 +87,27 @@ Performs variant calling on BAM files using **bcftools** and outputs compressed,
 ```bash
 bash CallVariants.sh
 ```
+### `makeMatrixEQTL.R`
+Runs eQTL analysis by integrating SNP genotypes from VCF files with RNA-seq expression data using the **MatrixEQTL** R package.  
+
+**Dependencies:**  
+- R packages: `VariantAnnotation`, `dplyr`, `MatrixEQTL`, `data.table`, `Matrix`, `biomaRt`  
+- Input files:  
+  - `*.vcf.gz` – Variant call files (compressed and indexed with bcftools)  
+  - `Num_mapped_reads.csv` – Maps sample IDs (`Run`) to cell lines  
+  - `CCLE_RNAseq_genes_rpkm_20180929.gct` – Gene expression data (RNA-seq, RPKM values)  
+  - `snps_positions.txt` – SNP positions (generated during runtime)  
+  - `gene_positions.txt` – Gene positions (fetched via biomaRt)  
+
+**Outputs:**  
+- `snps_positions.txt` – SNP positions extracted from VCFs  
+- `gene_positions.txt` – Gene coordinates for tested genes  
+- `output_matrixeqtl_results.txt` – eQTL associations (with p-values and FDR correction)  
+
+**Usage:**
+```bash
+Rscript makeMatrixEQTL.R
+```
 ## Data
 
 This repository contains data files required for the LOY mapping pipeline.
