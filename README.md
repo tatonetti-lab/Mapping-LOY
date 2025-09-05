@@ -114,7 +114,16 @@ This repository contains data files required for the LOY mapping pipeline.
 
 ### Required files
 
-- **`gene_chrY_positions.txt`** – Contains the start and end positions of genes on chromosome Y. 
+- **`gene_chrY_positions.txt`** – Contains the start and end positions of genes on chromosome Y.  
+- **`Num_mapped_reads.csv`** – Maps sequencing run IDs (`Run`) to their corresponding CCLE cell lines (`cell_line`).  
+  - Example format:  
+    ```
+    Run,cell_line,num_mapped_reads
+    SRR8639150,EBC1_LUNG,379420
+    SRR8639204,CAKI1_KIDNEY,541050
+    SRR8639219,DMS53_LUNG,514931
+    ```
+  - Only the `Run` and `cell_line` columns are required for analyses.  
 - **BAM files** – High-coverage WGS/WES BAM files.  
 - **RNA-seq counts** – Processed RNA-seq count files for integration with LOY analyses.
 
