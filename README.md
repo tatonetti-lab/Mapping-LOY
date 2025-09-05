@@ -71,6 +71,22 @@ Generates a visualization of expressed Y-linked genes across samples ordered by 
 ```bash
 Rscript CompareDNAtoRNA.R
 ```
+### `CallVariants.sh`
+Performs variant calling on BAM files using **bcftools** and outputs compressed, indexed VCF files.  
+
+**Dependencies:**  
+- Tools: `bcftools` (with `mpileup`, `call`, and `index` subcommands)  
+- Input files:  
+  - `*.bam` – BAM files to be processed  
+  - `Homo_sapiens_assembly19.fixed.fasta` – Reference genome (update path as needed)  
+
+**Outputs:**  
+- `VCF_Files/` – Directory containing compressed and indexed VCFs (`.vcf.gz` and `.csi`)  
+
+**Usage:**
+```bash
+bash CallVariants.sh
+```
 ## Data
 
 This repository contains data files required for the LOY mapping pipeline.
